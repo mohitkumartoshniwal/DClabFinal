@@ -14,7 +14,7 @@ void main() {
 	}
 
 	printf("When first private is not used\n");
-	printf("factorial of %d is %llu \n",a,fact1);
+	printf("factorial of %d is %llu \n",a,fact1);//llu
 	
 	#pragma omp parallel for firstprivate(a,fact2) num_threads(8)
 	for(i = 2; i<=a; i++) {
