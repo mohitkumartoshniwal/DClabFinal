@@ -6,7 +6,7 @@
 int main ( int argc, char *argv[] );
 int search ( int a, int b, int c, int id, int p );
 int f ( int i );
-void timestamp ( );
+//void timestamp ( );
 
 
 int main ( int argc, char *argv[] )
@@ -14,7 +14,7 @@ int main ( int argc, char *argv[] )
   int a;
   int b;
   int c;
-  int i4_huge = 2147483647;
+  int i4_huge = 2140000000;
   int id;
   int j;
   int p;
@@ -38,7 +38,7 @@ int main ( int argc, char *argv[] )
 
   if ( id == 0 )
   {
-    timestamp ( );
+   // timestamp ( );
     printf ( "\n" );
     printf ( "SEARCH_MPI:\n" );
     printf ( "  C/MPI version\n" );
@@ -81,7 +81,7 @@ int main ( int argc, char *argv[] )
     printf ( "SEARCH_MPI:\n" );
     printf ( "  Normal end of execution.\n" );
     printf ( "\n" );
-    timestamp ( );
+   // timestamp ( );
   }
 
   return 0;
@@ -116,7 +116,7 @@ int search ( int a, int b, int c, int id, int p )
 
 int f ( int i )
 {
-  int i4_huge = 2147483647;
+  int i4_huge = 2140000000;
   int j;
   int k;
   int value;
@@ -138,7 +138,7 @@ int f ( int i )
   return value;
 }
 /******************************************************************************/
-
+/*
 void timestamp ( )
 {
 # define TIME_SIZE 40
@@ -157,9 +157,10 @@ void timestamp ( )
   return;
 # undef TIME_SIZE
 }
+*/
 /******************************************************************************/
 
-double cpu_time ( void )
+/*double cpu_time ( void )
 {
   double value;
 
@@ -167,4 +168,4 @@ double cpu_time ( void )
         / ( double ) CLOCKS_PER_SEC;
 
   return value;
-}
+}*/

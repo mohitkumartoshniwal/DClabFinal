@@ -8,7 +8,7 @@
 int main (int argc, char* argv[])
 {
 int i,myid, numprocs, len=VECLEN;
-double *a, *b;
+double a[len], b[len];
 double mysum, allsum;
 
 /* MPI Initialization */
@@ -24,8 +24,8 @@ if (myid == 0)
   printf("Starting omp_dotprod_mpi. Using %d tasks...\n",numprocs);
 
 /* Assign storage for dot product vectors */
-a = (double*) malloc (len*sizeof(double));
-b = (double*) malloc (len*sizeof(double));
+//a = (double*) malloc (len*sizeof(double));
+//b = (double*) malloc (len*sizeof(double));
  
 /* Initialize dot product vectors */
 for (i=0; i<len; i++) {
@@ -47,7 +47,7 @@ MPI_Reduce (&mysum, &allsum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 if (myid == 0) 
   printf ("Done. MPI version: global sum  =  %f \n", allsum);
 
-free (a);
-free (b);
+//free (a);
+//free (b);
 MPI_Finalize();
 }   

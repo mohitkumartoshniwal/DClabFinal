@@ -3,7 +3,7 @@
 # include <time.h>
 # include "mpi.h"
 int main ( int argc, char *argv[] );
-void timestamp ( );
+//void timestamp ( );
 int main ( int argc, char *argv[] )
 {
   MPI_Comm even_comm_id;
@@ -40,7 +40,7 @@ int main ( int argc, char *argv[] )
 /*Process 0 prints an introductory message.*/
   if ( id == 0 ) 
   {
-    timestamp ( );
+   // timestamp ( );
     printf ( "\n" );
     printf ( "COMMUNICATOR_MPI - Master process:\n" );
     printf ( "  C/MPI version\n" );
@@ -55,7 +55,7 @@ int main ( int argc, char *argv[] )
   MPI_Comm_group ( MPI_COMM_WORLD, &world_group_id );
 /*List the even processes, and create their group.*/
   even_p = ( p + 1 ) / 2;
-  even_rank = ( int * ) malloc ( even_p * sizeof ( int ) );
+  even_rank = (int*)malloc(even_p*sizeof(int));
   j = 0;
   for ( i = 0; i < p; i = i + 2 )
   {
@@ -117,11 +117,11 @@ int main ( int argc, char *argv[] )
     printf ( "COMMUNICATOR_MPI:\n" );
     printf ( "  Normal end of execution.\n" );
     printf ( "\n" );
-    timestamp ( );
+    //timestamp ( );
   }
   return 0;
 }
-void timestamp ( void )
+/*void timestamp ( void )
 {
 # define TIME_SIZE 40
 
@@ -138,4 +138,4 @@ void timestamp ( void )
 
   return;
 # undef TIME_SIZE
-}
+}*/

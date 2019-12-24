@@ -38,6 +38,6 @@ void main() {
             res[i] = res[i] + mat[i][j] * vec[j];
     
     printf("Result after multiplication\n");
-    for(i = 0; i<n; i++)//m?
+    for(i = 0; i<m; i++)//m?
         printf("%d ",res[i]);        
 }
